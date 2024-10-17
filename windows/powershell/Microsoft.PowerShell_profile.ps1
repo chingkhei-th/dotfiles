@@ -15,11 +15,15 @@ function ocr {
 }
 
 # Keymap to change dir to Python (Udemy)
-function cdPython {
+function pyd {
     Set-Location 'D:\Coding\Python\Udemy\Codes'
 }
 
 # Keymap to change dir to Python (Udemy Intermediate)
-function cdPython {
+function pydi {
     Set-Location 'D:\Coding\Python\Udemy\Codes\02_Intermediate'
 }
+
+# UV Astral
+(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression

@@ -1,23 +1,30 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
--- Load python from pyenv path
--- vim.g.python3_host_prog = "/Users/ching/.pyenv/pyenv-win/versions/3.12.4/python.exe"
+-- Load python from default python path
+vim.g.python3_host_prog =
+    "C:/Users/ching/AppData/Local/Programs/Python/Python313"
 -- vim.g.mason_python_path = "/Users/ching/.pyenv/pyenv-win/versions/3.12.4/python.exe"
 
 -- Set PowerShell as the terminal emulator
-vim.g.terminal_emulator = 'powershell'
+vim.g.terminal_emulator = "powershell"
 
 -- Set PowerShell as the default shell
 vim.opt.shell = "C:/Program Files/PowerShell/7/pwsh.exe"
-
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
-  local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+    local repo = "https://github.com/folke/lazy.nvim.git"
+    vim.fn.system {
+        "git",
+        "clone",
+        "--filter=blob:none",
+        repo,
+        "--branch=stable",
+        lazypath,
+    }
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -26,14 +33,15 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-  },
+    {
+        "NvChad/NvChad",
+        lazy = false,
+        branch = "v2.5",
+        import = "nvchad.plugins",
+    },
 
-  { import = "plugins" },
+    -- Import additional plugins from the plugins/ directory
+    { import = "plugins" },
 }, lazy_config)
 
 -- load theme
@@ -47,5 +55,5 @@ require "nvchad.autocmds"
 require "nvchad.plugins"
 
 vim.schedule(function()
-  require "mappings"
+    require "mappings"
 end)

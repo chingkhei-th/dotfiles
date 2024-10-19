@@ -11,13 +11,19 @@ lspconfig.servers = {
     -- "gopls",
     -- "hls",
     -- "ols",
+    'cssls',
+    'html',
+    'jsonls',
+    'marksman',
     "pyright",
+    "ruff",
 }
 
 -- list of servers configured with default config.
 local default_servers = {
     -- "ols",
-    "pyright",
+    -- "pyright",
+    "ruff",
 }
 
 -- lsps with default config
@@ -28,6 +34,41 @@ for _, lsp in ipairs(default_servers) do
         capabilities = capabilities,
     })
 end
+
+-- Ruff LSP settings
+---- 
+local on_attach = function(client, bufnr)
+  if client.name == 'ruff_lsp' then
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+  end
+end
+
+lspconfig.ruff_lsp.setup({
+    on_attach = on_attach,
+    init_options = {
+    settings = {
+      -- Any extra CLI arguments for `ruff` go here.
+      args = {},
+    }
+  }
+})
+
+-- Pyright settings
+lspconfig.pyright.setup ({
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+})
 
 -- lspconfig.clangd.setup({
 --     on_attach = function(client, bufnr)
@@ -81,8 +122,8 @@ lspconfig.lua_ls.setup({
     settings = {
         Lua = {
             diagnostics = {
-                enable = false, -- Disable all diagnostics from lua_ls
-                -- globals = { "vim" },
+                -- enable = false, -- Disable all diagnostics from lua_ls
+                globals = { "vim" },
             },
             workspace = {
                 library = {

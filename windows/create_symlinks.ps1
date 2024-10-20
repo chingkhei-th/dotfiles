@@ -1,11 +1,15 @@
 # This script will automatically create symbolic links for each file and folder in each desired path.
 # Make sure you run this script as Administrator.
 
+# Run this script as admin
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process -Verb RunAs powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File \"$UserProfile\dotfiles\windows\create_symlinks.ps1\"'"
+
+
 # Check if running as admin
-if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
-    Write-Warning "Please run PowerShell as administrator."
-    exit
-}
+# if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+#     Write-Warning "Please run PowerShell as administrator."
+#     exit
+# }
 
 # Define user profile path
 $UserProfile = [System.Environment]::GetFolderPath("UserProfile")
@@ -54,3 +58,5 @@ Create-Symlink "$UserProfile\.vscode\argv.json" "$UserProfile\dotfiles\windows\v
 
 Write-Host "All symbolic links created!"
 
+# Keep the PowerShell window open to display the output
+Pause

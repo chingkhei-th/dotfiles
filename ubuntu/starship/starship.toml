@@ -62,7 +62,7 @@ success_symbol = "[❯](bold blue) "
 # Shows the username
 [username]
 style_user = 'bold #e95420'
-style_root = 'black bold'
+style_root = 'white bold'
 format = '[$user]($style) '
 disabled = false
 show_always = true

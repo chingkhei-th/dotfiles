@@ -1,6 +1,13 @@
 # Starship config
 Invoke-Expression (&starship init powershell)
 
+# Terminal icons
+# Need to install Terminal-Icons first
+Import-Module Terminal-Icons
+
+# Terminal ReadLine
+Import-Module PSReadLine
+
 # Keymap to open nvim (NeoVIm)
 Set-Alias -Name vi -Value "C:\Program Files\Neovim\bin\nvim.exe"
 

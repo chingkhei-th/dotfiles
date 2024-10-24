@@ -1,3 +1,10 @@
+## Windows
+
+Install Terminal-icons:
+```powershell
+Install-Module -Name Terminal-Icons -Repository PSGallery
+```
+
 ## Ubuntu
 
 ### Symbolic links creation

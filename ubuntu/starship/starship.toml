@@ -33,7 +33,7 @@ continuation_prompt = '▶▶ '
 # ---
 
 [os]
-format = '[$symbol](yellow) '
+format = '[$symbol](#e95420) '
 disabled = false
 
 # battery ---
@@ -60,7 +60,7 @@ success_symbol = "[❯](bold blue) "
 
 # Shows the username
 [username]
-style_user = 'bold #e95420'
+style_user = 'bold #f25d87'
 style_root = 'white bold'
 format = '[$user]($style) '
 disabled = false
@@ -74,7 +74,7 @@ disabled = false
 
 # Shows current directory
 [directory]
-style = 'bold fg:#b26180'
+style = 'bold fg:#c6a0f6'
 truncation_length = 3
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
@@ -148,7 +148,7 @@ style = 'fg:gray'
 format = '[$duration]($style)'
 
 [conda]
-symbol = " "
+symbol = "🅒 "
 
 [crystal]
 symbol = " "
@@ -298,7 +298,7 @@ symbol = " "
 symbol = " "
 format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )(\[$duration\])]($style)'
 version_format = 'v${raw}'
-style = 'teal'
+style = '#eebc61'
 pyenv_version_name = true
 pyenv_prefix = 	''
 detect_extensions = ['py']

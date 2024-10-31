@@ -6,7 +6,6 @@ add_newline = false
 format = """
 $os\
 $username\
-$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -75,7 +74,7 @@ disabled = false
 
 # Shows current directory
 [directory]
-style = 'bold fg:#b26180'
+style = 'bold fg:#c6a0f6'
 truncation_length = 3
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
@@ -149,7 +148,7 @@ style = 'fg:gray'
 format = '[$duration]($style)'
 
 [conda]
-symbol = " "
+symbol = "🅒 "
 
 [crystal]
 symbol = " "
@@ -299,7 +298,7 @@ symbol = " "
 symbol = " "
 format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )(\[$duration\])]($style)'
 version_format = 'v${raw}'
-style = 'teal'
+style = '#eebc61'
 pyenv_version_name = true
 pyenv_prefix = 	''
 detect_extensions = ['py']

@@ -32,5 +32,5 @@ function pydi {
 }
 
 # UV Astral
-(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
-(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression
+# (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+# (& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression

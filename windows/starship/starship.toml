@@ -11,6 +11,7 @@ $git_branch\
 $git_status\
 $fill\
 $python\
+$conda\
 $lua\
 $nodejs\
 $aws\
@@ -101,7 +102,7 @@ style = 'green'
 [git_status]
 format = '([ \( $all_status$ahead_behind\)]($style) )'
 style = 'green'
-conflicted = '[ confliced=${count}](red) '
+conflicted = '[ conflicted=${count}](red) '
 up_to_date = '[󰘽 up-to-date](green) '
 untracked = '[󰋗 untracked=${count}](red) '
 ahead = ' ahead=${count}'
@@ -148,7 +149,9 @@ style = 'fg:gray'
 format = '[$duration]($style)'
 
 [conda]
-symbol = "🅒 "
+symbol = "| 🅒 "
+style = 'green'
+format = '[$symbol($profile )(\($virtualenv\) )(\[$duration\] )]($style)'
 
 [crystal]
 symbol = " "

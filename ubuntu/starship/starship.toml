@@ -11,6 +11,7 @@ $git_branch\
 $git_status\
 $fill\
 $python\
+$conda\
 $lua\
 $nodejs\
 $aws\
@@ -60,7 +61,7 @@ success_symbol = "[❯](bold #c6a0f6) "
 
 # Shows the username
 [username]
-style_user = 'bold #f25d87'
+style_user = 'bold(#e64a19'
 style_root = 'white bold'
 format = '[$user]($style) '
 disabled = false
@@ -69,7 +70,7 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = 'on [$hostname](#e95420) '
+format = 'on [$hostname](#8177d7) '
 disabled = false
 
 # Shows current directory
@@ -101,7 +102,7 @@ style = 'green'
 [git_status]
 format = '([ \( $all_status$ahead_behind\)]($style) )'
 style = 'green'
-conflicted = '[ confliced=${count}](red) '
+conflicted = '[ conflicted=${count}](red) '
 up_to_date = '[󰘽 up-to-date](green) '
 untracked = '[󰋗 untracked=${count}](red) '
 ahead = ' ahead=${count}'
@@ -148,7 +149,9 @@ style = 'fg:gray'
 format = '[$duration]($style)'
 
 [conda]
-symbol = "🅒 "
+symbol = "| 🅒 "
+style = 'green'
+format = '[$symbol($profile )(\($virtualenv\) )(\[$duration\] )]($style)'
 
 [crystal]
 symbol = " "
@@ -159,7 +162,7 @@ symbol = " "
 [docker_context]
 symbol = " "
 style = 'fg:#06969A'
-format = '[$symbol]($style) $path'
+format = '[$symbol$context]($style) $path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
@@ -299,10 +302,10 @@ symbol = " "
 format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )(\[$duration\])]($style)'
 version_format = 'v${raw}'
 style = '#eebc61'
-pyenv_version_name = true
+pyenv_version_name = false
 pyenv_prefix = 	''
-detect_extensions = ['py']
-detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini']
+detect_extensions = ['py', 'ipynb']
+detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini', 'pixi.toml']
 
 [rlang]
 symbol = "󰟔 "

@@ -54,7 +54,7 @@ style = 'bold green'
 # ---
 
 [character]
-success_symbol = "[❯](bold cyan) "
+success_symbol = "[❯](bold #8D7B68) "
 # error_symbol = '[❯](bold blue) '
 
 # ---

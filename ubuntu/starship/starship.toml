@@ -54,7 +54,7 @@ style = 'bold green'
 # ---
 
 [character]
-success_symbol = "[❯](bold #c6a0f6) "
+success_symbol = "[❯](bold #FAB12F) "
 # error_symbol = '[❯](bold blue) '
 
 # ---
@@ -62,7 +62,7 @@ success_symbol = "[❯](bold #c6a0f6) "
 # Shows the username
 [username]
 style_user = 'bold(#e64a19'
-style_root = 'white bold'
+style_root = '#FFECDB bold'
 format = '[$user]($style) '
 disabled = false
 show_always = true

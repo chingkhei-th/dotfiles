@@ -54,15 +54,15 @@ style = 'bold green'
 # ---
 
 [character]
-success_symbol = "[❯](bold #FAB12F) "
+success_symbol = "[❯](bold cyan) "
 # error_symbol = '[❯](bold blue) '
 
 # ---
 
 # Shows the username
 [username]
-style_user = 'bold(#FAB12F'
-style_root = '#FAB12F bold'
+style_user = 'bold fg:#71C9CE'
+style_root = 'bold fg:#71C9CE'
 format = '[$user]($style) '
 disabled = false
 show_always = true
@@ -70,12 +70,12 @@ show_always = true
 # Shows the hostname
 [hostname]
 ssh_only = false
-format = 'on [$hostname](#FAB12F) '
+format = 'on [$hostname](#A6E3E9) '
 disabled = false
 
 # Shows current directory
 [directory]
-style = 'bold fg:#FEF3E2'
+style = 'bold fg:#A6E3E9'
 truncation_length = 3
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'

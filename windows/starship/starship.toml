@@ -162,7 +162,7 @@ symbol = " "
 [docker_context]
 symbol = " "
 style = 'fg:#06969A'
-format = '[$symbol]($style) $path'
+format = '[$symbol$context]($style) $path'
 detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 detect_extensions = ['Dockerfile']
 
@@ -302,10 +302,10 @@ symbol = " "
 format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )(\[$duration\])]($style)'
 version_format = 'v${raw}'
 style = '#eebc61'
-pyenv_version_name = true
+pyenv_version_name = false
 pyenv_prefix = 	''
-detect_extensions = ['py']
-detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini']
+detect_extensions = ['py', 'ipynb']
+detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini', 'pixi.toml']
 
 [rlang]
 symbol = "󰟔 "

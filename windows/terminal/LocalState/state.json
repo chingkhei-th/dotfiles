@@ -1,19 +1,21 @@
 {
 	"generatedProfiles" : 
 	[
-		"{f213d780-405c-5811-bd2e-1736fc7b26da}",
 		"{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-		"{89b9f0cb-7a32-55bd-88d7-aad9660fdf02}",
+		"{f213d780-405c-5811-bd2e-1736fc7b26da}",
 		"{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+		"{89b9f0cb-7a32-55bd-88d7-aad9660fdf02}",
 		"{bd02ca66-b550-5665-a349-7d9cdfbdf16b}",
 		"{604e644f-5fa1-5311-8221-bc5a7637aa60}",
 		"{51855cb2-8cce-5362-8f54-464b92b32386}",
-		"{2c4de342-38b7-51cf-b940-2309a097f518}"
+		"{2c4de342-38b7-51cf-b940-2309a097f518}",
+		"{1e97c1e3-a86b-54ac-b59d-d9e9d4d8b236}",
+		"{c47e4811-8025-5ddd-bebe-99298e3e4beb}"
 	],
 	"persistedWindowLayouts" : [],
 	"recentCommands" : 
 	[
 		"wt"
 	],
-	"settingsHash" : "fa5cf3d088a5242a-01db2b78fda758f7"
+	"settingsHash" : "f770fd8cfbd52136-01dba6f99ced49bc"
 }

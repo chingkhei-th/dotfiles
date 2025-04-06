@@ -34,7 +34,7 @@ continuation_prompt = '▶▶ '
 # ---
 
 [os]
-format = '[$symbol](#7A1CAC) '
+format = '[$symbol](#aa4ab6) '
 disabled = false
 
 # battery ---

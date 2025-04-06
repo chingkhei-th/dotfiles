@@ -9,13 +9,15 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
+            "id": "User.copy.644BA8F2"
         },
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.paste"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": 
@@ -24,13 +26,7 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "ctrl+shift+d"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.splitPane.A6751878"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -39,6 +35,25 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "firstWindowPreference": "defaultProfile",
+    "keybindings": 
+    [
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "ctrl+shift+d"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        }
+    ],
     "launchMode": "focus",
     "newTabMenu": 
     [
@@ -51,7 +66,7 @@
         "defaults": 
         {
             "adjustIndistinguishableColors": "always",
-            "colorScheme": "One Half Dark (Copy)",
+            "colorScheme": "Ching",
             "cursorHeight": 40,
             "cursorShape": "vintage",
             "font": 
@@ -66,6 +81,7 @@
         "list": 
         [
             {
+                "colorScheme": "Ching",
                 "cursorShape": "vintage",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
@@ -76,11 +92,18 @@
                 "useAcrylic": true
             },
             {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
+                "colorScheme": "Ching",
+                "guid": "{c47e4811-8025-5ddd-bebe-99298e3e4beb}",
                 "hidden": false,
-                "icon": "C:\\Users\\ching\\Pictures\\icons\\ubuntu-100.ico",
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "name": "Ubuntu-24.04",
+                "source": "Microsoft.WSL"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& 'C:\\Users\\ching\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate 'C:\\Users\\ching\\miniconda3' \"",
+                "guid": "{baef6041-a2f3-5472-b295-a7d7fb0ed62f}",
+                "icon": "C:\\Users\\ching\\miniconda3\\Menu\\anaconda_powershell_prompt.ico",
+                "name": "Anaconda PowerShell Prompt (miniconda3)",
+                "startingDirectory": "C:\\Users\\ching"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -111,11 +134,41 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2019",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\cmd.exe \"/K\" C:\\Users\\ching\\miniconda3\\Scripts\\activate.bat C:\\Users\\ching\\miniconda3",
+                "guid": "{35427e1d-45ad-517a-8692-8d5e4093f90f}",
+                "icon": "C:\\Users\\ching\\miniconda3\\Menu\\anaconda_prompt.ico",
+                "name": "Anaconda Prompt (miniconda3)",
+                "startingDirectory": "C:\\Users\\ching"
             }
         ]
     },
     "schemes": 
     [
+        {
+            "background": "#161D24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#95CF50",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#D9D2CA",
+            "green": "#0D3824",
+            "name": "Ching",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#9C9C9C",
+            "white": "#CCCCCC",
+            "yellow": "#84BA2D"
+        },
         {
             "background": "#000000",
             "black": "#0C0C0C",
@@ -163,6 +216,7 @@
             "yellow": "#88FF7E"
         }
     ],
+    "showTabsInTitlebar": true,
     "tabWidthMode": "compact",
     "theme": "dark",
     "themes": [],

@@ -115,15 +115,35 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
 
 # Starship
 eval "$(starship init bash)"
-export STARSHIP_CONFIG=~/.config/starship.toml
-export STARSHIP_CACHE=~/.starship/cache
+
+# Astral UV
+. "$HOME/.local/bin/env"
+## Auto completion for uv
+eval "$(uv generate-shell-completion bash)"
+
+# SSH-agent
+SSH_ENV="$HOME/.ssh/agent-environment"
+function start_agent {
+    echo "Initializing new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+}
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+
+# --- Shortcut commands ---
 
 # NeoVim
 alias vi='/usr/bin/nvim'
@@ -136,5 +156,10 @@ alias pyd='cd /mnt/d/Coding/Python/Udemy/Codes'
 alias pydi='cd /mnt/d/Coding/Python/Udemy/Codes/02_Intermediate'
 # cd to Lamzing
 alias lzd='cd /mnt/d/Coding/Lamzing'
-# cd to Lamzing OCR
-alias ocr='cd /mnt/d/Coding/Lamzing/OCR'
+
+# fnm
+FNM_PATH="/home/ching/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi

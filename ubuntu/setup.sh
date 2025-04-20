@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Get the directory of this script (repo root)
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 # Function to safely create symlinks
 link_file() {
     local source="$1"
@@ -32,16 +29,16 @@ link_file "$HOME/dotfiles/ubuntu/neovim/NvChad/nvim" "$HOME/.config/nvim"
 link_file "$HOME/dotfiles/ubuntu/starship/starship.toml" "$HOME/.config/starship.toml"
 
 # Link .bashrc
-link_file "$DOTFILES_DIR/ubuntu/bash/.bashrc" "$HOME/.bashrc"
+link_file "$HOME/dotfiles/ubuntu/bash/.bashrc" "$HOME/.bashrc"
 
 # Link .secret-keys.gpg
-link_file "$DOTFILES_DIR/ubuntu/keys/.secret-keys.gpg" "$HOME/.secret-keys.gpg"
+link_file "$HOME/dotfiles/ubuntu/keys/.secret-keys.gpg" "$HOME/.secret-keys.gpg"
 
 # Ensure .gnupg directory exists with secure permissions
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
 
 # Link gpg-agent.conf
-link_file "$DOTFILES_DIR/ubuntu/keys/.gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+link_file "$HOME/dotfiles/ubuntu/keys/.gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 echo "All symbolic links created!"

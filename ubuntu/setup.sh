@@ -31,20 +31,17 @@ link_file "$HOME/dotfiles/ubuntu/neovim/NvChad/nvim" "$HOME/.config/nvim"
 # Starship configuration
 link_file "$HOME/dotfiles/ubuntu/starship/starship.toml" "$HOME/.config/starship.toml"
 
-# Bash configuration
-link_file "$HOME/dotfiles/ubuntu/bash/.bashrc" "$HOME/.bashrc"
-
 # Link .bashrc
 link_file "$DOTFILES_DIR/ubuntu/bash/.bashrc" "$HOME/.bashrc"
 
 # Link .secret-keys.gpg
-link_file "$DOTFILES_DIR/.secret-keys.gpg" "$HOME/.secret-keys.gpg"
+link_file "$DOTFILES_DIR/ubuntu/keys/.secret-keys.gpg" "$HOME/.secret-keys.gpg"
 
 # Ensure .gnupg directory exists with secure permissions
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
 
 # Link gpg-agent.conf
-link_file "$DOTFILES_DIR/.gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+link_file "$DOTFILES_DIR/ubuntu/keys/.gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 echo "All symbolic links created!"

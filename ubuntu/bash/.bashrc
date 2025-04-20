@@ -207,3 +207,8 @@ function ensure_encryption_on_crash {
 # Add the crash-safe function to the EXIT trap
 trap ensure_encryption_on_crash EXIT
 # ──────────────────────────────────────────────────────────────────────────────
+
+# ─── Load API keys (for Open-Codex) ───────────────────────────────────────────
+export OPENAI_API_KEY=OPENAI_API_KEY
+export GOOGLE_GENERATIVE_AI_API_KEY=GOOGLE_GENERATIVE_AI_API_KEY
+# ──────────────────────────────────────────────────────────────────────────────

@@ -31,14 +31,4 @@ link_file "$HOME/dotfiles/ubuntu/starship/starship.toml" "$HOME/.config/starship
 # Link .bashrc
 link_file "$HOME/dotfiles/ubuntu/bash/.bashrc" "$HOME/.bashrc"
 
-# Link .secret-keys.gpg
-link_file "$HOME/dotfiles/ubuntu/keys/.secret-keys.gpg" "$HOME/.secret-keys.gpg"
-
-# Ensure .gnupg directory exists with secure permissions
-mkdir -p "$HOME/.gnupg"
-chmod 700 "$HOME/.gnupg"
-
-# Link gpg-agent.conf
-link_file "$HOME/dotfiles/ubuntu/keys/.gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
-
 echo "All symbolic links created!"

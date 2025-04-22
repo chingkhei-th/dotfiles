@@ -121,6 +121,7 @@ eval "$(starship init bash)"
 
 # Astral UV
 . "$HOME/.local/bin/env"
+export UV_LINK_MODE=copy
 ## Auto completion for uv
 eval "$(uv generate-shell-completion bash)"
 
@@ -148,6 +149,9 @@ fi
 # NeoVim
 alias vi='/usr/bin/nvim'
 
+# Open-Codex
+alias ai='open-codex'
+
 # --- Change directory
 alias cdd='cd /mnt/d/'
 # cd to Udemy python
@@ -164,51 +168,8 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# ──────────────────────────────────────────────────────────
-# Decrypt & source secrets on shell startup
-# if [ -f "$HOME/.secret-keys.gpg" ]; then
-#   source <( gpg --quiet --decrypt "$HOME/.secret-keys.gpg" )
-# fi
-# ──────────────────────────────────────────────────────────
-
-# ─── Decrypt and source on terminal start ─────────────────────────────────────
-if [ -f "$HOME/.secret-keys.gpg" ]; then
-  if [ ! -f "$HOME/.secret-keys" ]; then
-    gpg --quiet --decrypt --output "$HOME/.secret-keys" "$HOME/.secret-keys.gpg"
-  fi
-  source "$HOME/.secret-keys"
-fi
-# ──────────────────────────────────────────────────────────────────────────────
-
-# ─── Auto-encrypt on terminal close ───────────────────────────────────────────
-function save_secret_keys_on_exit {
-  if [ -f "$HOME/.secret-keys" ]; then
-    gpg --symmetric --cipher-algo AES256 --batch --yes \
-      --passphrase "$(gpg-preset-passphrase --preset --passphrase-fd 0 <<< $(gpg-agent))" \
-      --output "$HOME/.secret-keys.gpg" "$HOME/.secret-keys"
-    shred -u "$HOME/.secret-keys"
-  fi
-}
-trap save_secret_keys_on_exit EXIT
-# ──────────────────────────────────────────────────────────────────────────────
-
-# ─── Ensure secrets are encrypted on shell crash ──────────────────────────────
-function ensure_encryption_on_crash {
-  # Check if .secret-keys exists (it should, if something went wrong)
-  if [ -f "$HOME/.secret-keys" ]; then
-    echo "Shell crashed unexpectedly. Re-encrypting secrets..."
-    gpg --symmetric --cipher-algo AES256 --batch --yes \
-      --passphrase "$(gpg-preset-passphrase --preset --passphrase-fd 0 <<< $(gpg-agent))" \
-      --output "$HOME/.secret-keys.gpg" "$HOME/.secret-keys"
-    shred -u "$HOME/.secret-keys"
-  fi
-}
-
-# Add the crash-safe function to the EXIT trap
-trap ensure_encryption_on_crash EXIT
-# ──────────────────────────────────────────────────────────────────────────────
-
 # ─── Load API keys (for Open-Codex) ───────────────────────────────────────────
+source "$HOME/.secret-keys"
 export OPENAI_API_KEY=OPENAI_API_KEY
 export GOOGLE_GENERATIVE_AI_API_KEY=GOOGLE_GENERATIVE_AI_API_KEY
 # ──────────────────────────────────────────────────────────────────────────────

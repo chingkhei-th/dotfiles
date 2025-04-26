@@ -147,7 +147,10 @@ fi
 # --- Shortcut commands ---
 
 # NeoVim
-alias vi='/usr/bin/nvim'
+alias vi='nvim'
+
+# Python env activation
+alias activate='source .venv/bin/activate'
 
 # Open-Codex
 alias ai='open-codex'
@@ -170,6 +173,5 @@ fi
 
 # ─── Load API keys (for Open-Codex) ───────────────────────────────────────────
 source "$HOME/.secret-keys"
-export OPENAI_API_KEY=OPENAI_API_KEY
 export GOOGLE_GENERATIVE_AI_API_KEY=GOOGLE_GENERATIVE_AI_API_KEY
 # ──────────────────────────────────────────────────────────────────────────────

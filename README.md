@@ -38,15 +38,15 @@ Install-Module -Name Terminal-Icons -Repository PSGallery
 
 ### Symbolic links creation
 
-1. Change the directory to `/ubuntu/`.
+1. From `$Home` directory. To make sure run `cd $HOME`.
 2. Make the script executable:
     ```bash
-    chmod +x ~/dotfiles/ubuntu/create_symlinks.sh
+    chmod +x ~/dotfiles/ubuntu/setup.sh
 
     ```
 3. Run the script as admin:
     ```bash
-    sudo ~/dotfiles/ubuntu/create_symlinks.sh
+    sudo ~/dotfiles/ubuntu/setup.sh
     ```
 
 or Manually create the symbolic links:

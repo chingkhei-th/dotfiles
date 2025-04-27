@@ -1,17 +1,6 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
--- Load python from pyenv path
--- vim.g.python3_host_prog = "/Users/ching/.pyenv/pyenv-win/versions/3.12.4/python.exe"
--- vim.g.mason_python_path = "/Users/ching/.pyenv/pyenv-win/versions/3.12.4/python.exe"
-
--- -- Set PowerShell as the terminal emulator
--- vim.g.terminal_emulator = 'powershell'
-
--- -- Set PowerShell as the default shell
--- vim.opt.shell = "C:/Program Files/PowerShell/7/pwsh.exe"
-
-
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
@@ -24,7 +13,18 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
--- load plugins
+-- Custom Plugins
+-- local function load_custom_plugins()
+--   local plugins = {}
+--   local plugin_files = vim.fn.globpath("lua/custom/plugins", "*.lua", false, true)
+--   for _, file in ipairs(plugin_files) do
+--     local plugin = dofile(file)
+--     table.insert(plugins, plugin)
+--   end
+--   return plugins
+-- end
+
+-- load plugins from main NvChad repo "https://github.com/NvChad/NvChad.git"
 require("lazy").setup({
   {
     "NvChad/NvChad",
@@ -34,6 +34,8 @@ require("lazy").setup({
   },
 
   { import = "plugins" },
+  { import = "custom.plugins" },  -- Load custom plugins
+  -- unpack(load_custom_plugins()),  -- Load custom plugins
 }, lazy_config)
 
 -- load theme
@@ -43,8 +45,11 @@ dofile(vim.g.base46_cache .. "statusline")
 require "options"
 require "nvchad.autocmds"
 
--- load remote plugins from main repo
+-- from main repo
 require "nvchad.plugins"
+
+-- Activate python environment in parent directory
+-- require("custom.configs.auto_venv")
 
 vim.schedule(function()
   require "mappings"

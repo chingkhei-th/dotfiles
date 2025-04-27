@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -16,17 +16,17 @@
             "id": "User.paste"
         },
         {
-            "command": "find",
-            "id": "User.find"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         }
     ],
     "alwaysShowNotificationIcon": false,
@@ -35,50 +35,51 @@
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "firstWindowPreference": "defaultProfile",
-    "keybindings": 
+    "keybindings":
     [
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "ctrl+shift+d"
-        },
         {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.splitPane.A6751878",
+            "keys": "ctrl+shift+d"
         },
         {
             "id": "User.paste",
             "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         }
     ],
     "launchMode": "focus",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "adjustIndistinguishableColors": "always",
             "colorScheme": "Ching",
             "cursorHeight": 40,
             "cursorShape": "vintage",
-            "font": 
+            "font":
             {
                 "face": "FiraCode Nerd Font",
-                "size": 13
+                "size": 13,
+                "weight": "normal"
             },
-            "opacity": 85,
+            "opacity": 60,
             "showMarksOnScrollbar": true,
             "useAcrylic": true
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "Ching",
@@ -87,14 +88,14 @@
                 "hidden": false,
                 "icon": "C:\\Users\\ching\\Pictures\\icons\\powershell-60.ico",
                 "name": "PowerShell",
-                "opacity": 35,
                 "source": "Windows.Terminal.PowershellCore",
                 "useAcrylic": true
             },
             {
                 "colorScheme": "Ching",
-                "guid": "{c47e4811-8025-5ddd-bebe-99298e3e4beb}",
+                "guid": "{daf56c54-ba01-58e3-b9a2-8a849f9a8b72}",
                 "hidden": false,
+                "icon": "C:\\Users\\ching\\Pictures\\icons\\ubuntu-100.ico",
                 "name": "Ubuntu-24.04",
                 "source": "Microsoft.WSL"
             },
@@ -141,10 +142,16 @@
                 "icon": "C:\\Users\\ching\\miniconda3\\Menu\\anaconda_prompt.ico",
                 "name": "Anaconda Prompt (miniconda3)",
                 "startingDirectory": "C:\\Users\\ching"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#161D24",

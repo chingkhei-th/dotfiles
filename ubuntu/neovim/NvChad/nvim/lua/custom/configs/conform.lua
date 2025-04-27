@@ -1,20 +1,3 @@
-<<<<<<< HEAD:windows/neovim/NvChad/nvim/lua/configs/conform.lua
-local options = {
-  formatters_by_ft = {
-    lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
-  },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
-}
-
-return options
-=======
 local conform = require "conform"
 
 conform.setup {
@@ -117,4 +100,3 @@ vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 end, { desc = "Format file or range (in visual mode)" })
 
 require("conform").setup(options)
->>>>>>> 1fecdc8b27e18051d031fe867e523d0db06a31cd:ubuntu/neovim/NvChad/nvim/lua/custom/configs/conform.lua

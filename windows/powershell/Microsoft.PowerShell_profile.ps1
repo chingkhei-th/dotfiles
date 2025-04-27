@@ -39,3 +39,6 @@ function touch {
     }
 }
 
+# Activate python venv with `activate <env_name>`
+function activate { param($env) . "$env\Scripts\Activate" }
+

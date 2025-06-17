@@ -121,7 +121,9 @@ eval "$(starship init bash)"
 
 # Astral UV
 . "$HOME/.local/bin/env"
+
 export UV_LINK_MODE=copy
+
 ## Auto completion for uv
 eval "$(uv generate-shell-completion bash)"
 
@@ -152,8 +154,8 @@ alias vi='nvim'
 # Python env activation
 alias activate='source .venv/bin/activate'
 
-# Open-Codex
-alias ai='open-codex'
+# Open-Codex (codex)
+alias ai='codex'
 
 # --- Change directory
 alias cdd='cd /mnt/d/'
@@ -173,5 +175,6 @@ fi
 
 # ─── Load API keys (for Open-Codex) ───────────────────────────────────────────
 source "$HOME/.secret-keys"
-export GOOGLE_GENERATIVE_AI_API_KEY=GOOGLE_GENERATIVE_AI_API_KEY
+export GEMINI_API_KEY=GOOGLE_GENERATIVE_AI_API_KEY
+export OPENAI_API_KEY=OPENAI_API_KEY
 # ──────────────────────────────────────────────────────────────────────────────

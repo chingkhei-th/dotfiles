@@ -34,7 +34,7 @@ continuation_prompt = '▶▶ '
 # ---
 
 [os]
-format = '[$symbol](#3f7ee5) '
+format = '[$symbol](#FCD8CD) '
 disabled = false
 
 # battery ---
@@ -61,7 +61,7 @@ success_symbol = "[❯](bold #c6a0f6) "
 
 # Shows the username
 [username]
-style_user = 'bold #4984f1'
+style_user = 'bold #FED2E2'
 style_root = 'white bold'
 format = '[$user]($style) '
 disabled = false
@@ -75,7 +75,7 @@ disabled = false
 
 # Shows current directory
 [directory]
-style = 'bold fg:#c6a0f6'
+style = 'bold fg:#E9A5F1'
 truncation_length = 3
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'

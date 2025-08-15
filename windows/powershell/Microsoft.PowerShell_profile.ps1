@@ -42,3 +42,10 @@ function touch {
 # Activate python venv with `activate <env_name>`
 function activate { param($env) . "$env\Scripts\Activate" }
 
+# Gemini CLI
+function Invoke-Gemini {
+    node C:\Users\myuser\dev\gemini-cli\bundle\gemini.js @args
+}
+
+Set-Alias -Name gemini -Value Invoke-Gemini
+

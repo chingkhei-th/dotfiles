@@ -165,7 +165,7 @@ alias pydi='cd /mnt/d/Coding/Python/Udemy/Codes/02_Intermediate'
 # cd to Lamzing
 alias lzd='cd /mnt/d/Coding/Lamzing'
 # cd to Learning
-alias lzd='cd /mnt/d/Learning/'
+alias lrn='cd /mnt/d/Learning/'
 
 # fnm
 FNM_PATH="/home/ching/.local/share/fnm"

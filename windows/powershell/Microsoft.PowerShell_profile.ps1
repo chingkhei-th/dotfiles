@@ -49,3 +49,5 @@ function Invoke-Gemini {
 
 Set-Alias -Name gemini -Value Invoke-Gemini
 
+# UV link-mode warning surpress
+Add-Content $PROFILE '$env:UV_LINK_MODE = "copy"'

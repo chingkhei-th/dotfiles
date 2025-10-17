@@ -46,6 +46,7 @@ Create-Symlink "$UserProfile\AppData\Local\nvim" "$UserProfile\dotfiles\windows\
 
 # PowerShell profile configuration
 Create-Symlink "$UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "Hard"
+Create-Symlink "D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "File"
 
 # .gitconfig
 Create-Symlink "$UserProfile\.gitconfig" "$UserProfile\dotfiles\windows\.gitconfig"

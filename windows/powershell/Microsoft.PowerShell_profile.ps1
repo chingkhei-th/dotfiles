@@ -1,3 +1,5 @@
+# ====== Imports ======
+
 # Starship config
 Invoke-Expression (&starship init powershell)
 
@@ -9,6 +11,13 @@ Import-Module Terminal-Icons
 Import-Module PSReadline
 
 Set-PSReadLineOption -PredictionViewStyle ListView
+
+
+# UV link-mode warning surpress
+$env:UV_LINK_MODE = "copy"
+
+# ==========
+# ===== Keymaps =====
 
 # Keymap to open nvim (NeoVIm)
 Set-Alias -Name vi -Value "C:\Program Files\Neovim\bin\nvim.exe"
@@ -23,10 +32,11 @@ function pyd {
     Set-Location 'D:\Coding\Python\Udemy\Codes'
 }
 
-# Keymap to change dir to Python (Udemy Intermediate)
-function pydi {
-    Set-Location 'D:\Coding\Python\Udemy\Codes\02_Intermediate'
-}
+# Keymap to run Python
+Set-Alias -Name py -Value 'python'
+
+# ==========
+# ===== Functions =====
 
 # Mimic "touch" command from Linux
 function touch {
@@ -42,12 +52,4 @@ function touch {
 # Activate python venv with `activate <env_name>`
 function activate { param($env) . "$env\Scripts\Activate" }
 
-# Gemini CLI
-function Invoke-Gemini {
-    node C:\Users\myuser\dev\gemini-cli\bundle\gemini.js @args
-}
-
-Set-Alias -Name gemini -Value Invoke-Gemini
-
-# UV link-mode warning surpress
-Add-Content $PROFILE '$env:UV_LINK_MODE = "copy"'
+# ==========

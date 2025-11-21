@@ -1,4 +1,19 @@
 [opener]
 edit = [
-    { run = 'nvim "%*"', block = true, desc = "Edit", for = "windows" }
+    { run = 'nvim "%*"', block = true, desc = "Edit on NeoVim", for = "windows" }
+]
+
+# New Opener for Jupyter Notebook in Vs Code
+vscode-ipynb = [
+    # The 'code' command opens the file, '-r' reuses the existing window.
+    # '%*' passes the selected file path on Windows.
+    # 'block = false' is essential so Yazi stays open while VS Code runs.
+    { run = 'code -r "%*"', block = false, desc = "VS Code (ipynb)", for = "windows" },
+]
+
+[open]
+prepend_rules = [
+    # This rule is checked first. If the file name matches *.ipynb, it uses
+    # the 'vscode-ipynb' opener defined above.
+    { name = "*.ipynb", use = "vscode-ipynb" },
 ]

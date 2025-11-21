@@ -12,6 +12,8 @@ Import-Module PSReadline
 
 Set-PSReadLineOption -PredictionViewStyle ListView
 
+# Yazi File manager (for file type detection)
+$Env:YAZI_FILE_ONE = 'C:\Program Files\Git\usr\bin\file.exe'
 
 # UV link-mode warning surpress
 $env:UV_LINK_MODE = "copy"
@@ -51,5 +53,16 @@ function touch {
 
 # Activate python venv with `activate <env_name>`
 function activate { param($env) . "$env\Scripts\Activate" }
+
+# Ability to change the current working directory when exiting Yazi
+function y {
+    $tmp = (New-TemporaryFile).FullName
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp -Encoding UTF8
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath (Resolve-Path -LiteralPath $cwd).Path
+    }
+    Remove-Item -Path $tmp
+}
 
 # ==========

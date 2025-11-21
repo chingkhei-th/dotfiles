@@ -42,20 +42,14 @@ function Create-Symlink {
 Create-Symlink "$UserProfile\.config\starship.toml" "$UserProfile\dotfiles\windows\starship\starship.toml" "Hard"
 
 # NeoVim configuration (directory link)
-Create-Symlink "$UserProfile\AppData\Local\nvim" "$UserProfile\dotfiles\windows\neovim\NvChad\nvim" "Directory"
+Create-Symlink "$UserProfile\AppData\Local\nvim" "D:\Coding\neovim-configs\NvChad\nvim" "Directory"
 
 # PowerShell profile configuration
 Create-Symlink "$UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "Hard"
 Create-Symlink "D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "File"
 
-# .gitconfig
-Create-Symlink "$UserProfile\.gitconfig" "$UserProfile\dotfiles\windows\.gitconfig"
-
-# VSCode extensions.json (hard link)
-Create-Symlink "$UserProfile\.vscode\extensions\extensions.json" "$UserProfile\dotfiles\windows\vscode\extensions\extensions.json" "Hard"
-
-# VSCode argv.json (hard link)
-Create-Symlink "$UserProfile\.vscode\argv.json" "$UserProfile\dotfiles\windows\vscode\argv.json" "Hard"
+# Yazi File Manager
+Create-Symlink "$UserProfile\AppData\Roaming\yazi\config" "$UserProfile\dotfiles\windows\yazi\config" "Directory"
 
 Write-Host "All symbolic links created!"
 

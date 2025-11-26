@@ -5,7 +5,11 @@ Invoke-Expression (&starship init powershell)
 
 # Terminal icons
 # Need to install Terminal-Icons first
-Import-Module Terminal-Icons
+try {
+    Import-Module Terminal-Icons -ErrorAction Stop
+} catch {
+    Write-Warning "Terminal-Icons not available or misconfigured. Skipping icons."
+}
 
 # Command history and suggestions
 Import-Module PSReadline

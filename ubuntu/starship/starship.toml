@@ -34,7 +34,7 @@ continuation_prompt = '▶▶ '
 # ---
 
 [os]
-format = '[$symbol](#F1DEC9) '
+format = '[$symbol](#ff6840) '
 disabled = false
 
 # battery ---
@@ -61,7 +61,7 @@ success_symbol = "[❯](bold #8D7B68) "
 
 # Shows the username
 [username]
-style_user = 'bold fg:#C8B6A6'
+style_user = 'bold fg:#f99463'
 style_root = 'bold fg:#71C9CE'
 format = '[$user]($style) '
 disabled = false

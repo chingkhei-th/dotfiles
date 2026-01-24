@@ -34,6 +34,10 @@ function pyd {
     Set-Location 'D:\Coding\Python\Udemy\Codes'
 }
 
+# Keymap to change dir to Learning
+function lrn {
+    Set-Location 'D:\Learning\'
+}
 # Keymap to run Python
 Set-Alias -Name py -Value 'python'
 

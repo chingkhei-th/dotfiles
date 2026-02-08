@@ -6,17 +6,22 @@ edit = [
     { run = 'nvim "%*"', block = true, desc = "Edit on NeoVim", for = "windows" }
 ]
 
-# New Opener for Jupyter Notebook in Vs Code
 vscode-ipynb = [
-    # The 'code' command opens the file, '-r' reuses the existing window.
-    # '%*' passes the selected file path on Windows.
-    # 'block = false' is essential so Yazi stays open while VS Code runs.
     { run = 'code -r "%*"', block = false, desc = "VS Code (ipynb)", for = "windows" },
 ]
 
 [open]
 prepend_rules = [
-    # This rule is checked first. If the file name matches *.ipynb, it uses
-    # the 'vscode-ipynb' opener defined above.
-    { name = "*.ipynb", use = "vscode-ipynb" },
+    # 1. Force ipynb to VS Code
+    { url = "*.ipynb", use = "vscode-ipynb" },
+
+    # 2. Force TOML and YAML specifically to NeoVim
+    # This prevents the system's MIME-type association from picking VS Code
+    { url = "*.{toml,yaml,yml}", use = "edit" },
+
+    # 3. All other programming/text languages
+    { url = "*.{txt,c,cpp,md,html,py,js,json,rs,go,pyw}", use = "edit" },
+
+    # 4. Optional: Fallback to open EVERYTHING unrecognized in nvim
+    # { url = "*", use = "edit" }
 ]

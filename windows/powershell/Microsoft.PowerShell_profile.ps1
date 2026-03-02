@@ -24,22 +24,24 @@ $env:UV_LINK_MODE = "copy"
 # Keymap to open nvim (NeoVIm)
 Set-Alias -Name vi -Value "C:\Program Files\Neovim\bin\nvim.exe"
 
-# Keymap to change dir to Lamzing
-function lzd {
-    Set-Location 'D:\Coding\Lamzing'
+# Keymap to change dir to Work directory
+function wrk {
+    Set-Location 'D:\Work\'
 }
 
-# Keymap to change dir to Python (Udemy)
-function pyd {
-    Set-Location 'D:\Coding\Python\Udemy\Codes'
-}
+# Keymap to open lazygit
+Set-Alias -Name lg -Value 'lazygit'
 
 # Keymap to change dir to Learning
 function lrn {
     Set-Location 'D:\Learning\'
 }
+
 # Keymap to run Python
 Set-Alias -Name py -Value 'python'
+
+# Keymap to open explorer
+Set-Alias -Name e -Value 'start'
 
 # ==========
 # ===== Functions =====

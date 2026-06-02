@@ -161,9 +161,9 @@ alias cdd='cd /mnt/d/'
 # cd to Udemy python
 alias pyd='cd /mnt/d/Coding/Python/Udemy/Codes'
 # cd to Udemy python Intermediate
-alias pydi='cd /mnt/d/Coding/Python/Udemy/Codes/02_Intermediate'
+alias nic='cd /mnt/d/Work/NIC'
 # cd to Lamzing
-alias lzd='cd /mnt/d/Coding/Lamzing'
+alias ecmis='cd /mnt/d/Work/NIC/projects/climate-change'
 # cd to Learning
 alias lrn='cd /mnt/d/Learning/'
 

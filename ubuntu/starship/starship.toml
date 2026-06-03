@@ -34,7 +34,7 @@ continuation_prompt = '▶▶ '
 # ---
 
 [os]
-format = '[$symbol](#ff6840) '
+format = '[$symbol](#9e92ed) '
 disabled = false
 
 # battery ---
@@ -54,8 +54,8 @@ style = 'bold green'
 # ---
 
 [character]
-success_symbol = "[❯](bold #8D7B68) "
-# error_symbol = '[❯](bold blue) '
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
 
 # ---
 
@@ -64,24 +64,24 @@ success_symbol = "[❯](bold #8D7B68) "
 style_user = 'bold fg:#f99463'
 style_root = 'bold fg:#71C9CE'
 format = '[$user]($style) '
-disabled = false
-show_always = true
+disabled = true
+show_always = false
 
 # Shows the hostname
 [hostname]
 ssh_only = false
 format = 'on [$hostname](#A6E3E9) '
-disabled = false
+disabled = true
 
 # Shows current directory
 [directory]
-style = 'bold fg:#A4907C'
+style = 'bold fg:#cba6f7'
 truncation_length = 3
 truncation_symbol = '…/'
 home_symbol = '󰋜 ~'
 read_only_style = '197'
 read_only = '  '
-format = 'at [$path]($style)[$read_only]($read_only_style) '
+format = '[$path]($style)[$read_only]($read_only_style) '
 truncate_to_repo = false
 
 [directory.substitutions]

@@ -39,14 +39,13 @@ function Create-Symlink {
 }
 
 # Starship configuration
-Create-Symlink "$UserProfile\.config\starship.toml" "$UserProfile\dotfiles\windows\starship\starship.toml" "Hard"
+Create-Symlink "$UserProfile\.config\starship.toml" "$UserProfile\dotfiles\common\starship\starship.toml" "Hard"
 
 # NeoVim configuration (directory link)
-Create-Symlink "$UserProfile\AppData\Local\nvim" "D:\Coding\neovim-configs\NvChad\nvim" "Directory"
+Create-Symlink "$UserProfile\AppData\Local\nvim" "D:\Tools\neovim-configs\NvChad\nvim" "Directory"
 
 # PowerShell profile configuration
 Create-Symlink "$UserProfile\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "Hard"
-Create-Symlink "D:\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" "$UserProfile\dotfiles\windows\powershell\Microsoft.PowerShell_profile.ps1" "File"
 
 # Yazi File Manager
 Create-Symlink "$UserProfile\AppData\Roaming\yazi\config" "$UserProfile\dotfiles\windows\yazi\config" "Directory"

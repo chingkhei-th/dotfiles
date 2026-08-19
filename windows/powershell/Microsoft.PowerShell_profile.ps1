@@ -29,8 +29,15 @@ function wrk {
     Set-Location 'D:\Work\'
 }
 
+function obsdir {
+  Set-Location 'E:\Obsidian\My Second Brain\'
+}
+
 # Keymap to open lazygit
 Set-Alias -Name lg -Value 'lazygit'
+
+# Keymap to open Obsidian
+Set-Alias -Name obs -Value 'obsidian'
 
 # Keymap to change dir to Learning
 function lrn {

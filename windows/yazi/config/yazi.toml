@@ -3,11 +3,11 @@ show_hidden = true
 
 [opener]
 edit = [
-    { run = 'nvim "%*"', block = true, desc = "Edit on NeoVim", for = "windows" }
+    { run = 'nvim "%s"', block = true, desc = "Edit on NeoVim", for = "windows" }
 ]
 
 vscode-ipynb = [
-    { run = 'code -r "%*"', block = false, desc = "VS Code (ipynb)", for = "windows" },
+    { run = 'code -r "%s"', block = false, desc = "VS Code (ipynb)", for = "windows" },
 ]
 
 [open]

@@ -29,6 +29,10 @@ function wrk {
     Set-Location 'D:\Work\'
 }
 
+function mis {
+  Set-Location 'D:\Work\NIC\projects\climate-change\'
+}
+
 function obsdir {
   Set-Location 'E:\Obsidian\My Second Brain\'
 }

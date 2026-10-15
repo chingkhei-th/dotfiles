@@ -18,6 +18,9 @@ $Env:YAZI_FILE_ONE = 'C:\Program Files\Git\usr\bin\file.exe'
 # UV link-mode warning surpress
 $env:UV_LINK_MODE = "copy"
 
+# Initialize zoxide
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
 # ==========
 # ===== Keymaps =====
 
